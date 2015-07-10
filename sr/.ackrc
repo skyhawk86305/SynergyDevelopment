@@ -1,0 +1,5 @@
+--type-add=jsx:ext:jsx
+--ignore-directory=is:dist
+--ignore-directory=is:vendor
+--ignore-file=ext:orig,patch,diff
+--ignore-file=ext:sublime-workspace,sublime-project

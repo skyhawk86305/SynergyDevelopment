@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e # halt when command fails
+
+SHORT=sr
+BRANCH=`hg branch`
+SAFEBRANCH=`hg branch |  sed 's/\//-/g'`
+PARENT=`hg parent | grep changeset | cut -f 3 -d :`
+NOW=`node -e 'console.log(new Date().toUTCString());'`
+
+echo Dirty files:
+if hg status -mard | grep -e ^; then
+    DIRTY=true
+else
+    DIRTY=false
+    echo '  None.'
+fi
+
+echo
+echo Updating version file...
+cd `hg root`
+cat > version.js <<EOF
+module.exports = {
+    branch: '${BRANCH}',
+    revision: '${PARENT}',
+    dirty: ${DIRTY},
+    datetime: '${NOW}'
+};
+EOF
+cat version.js

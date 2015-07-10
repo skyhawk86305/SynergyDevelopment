@@ -1,0 +1,66 @@
+#!/bin/bash -e
+#
+# Build a tarchive to extract into /opt with /opt/synergy as the result.
+# Intended to run from the Dockerfile so we can capture the output as logs.
+# Extract the archive itself like this:
+#
+#   docker run --rm -w /build $IMAGE cat sr/sr.tar.gz > sr.tar.gz
+#   docker run --rm -w /build $IMAGE tar cfz - synergy > synergy.tgz
+#
+# ... or use bin/extract-tarballs-from-container.
+#
+# build-in-container builds images named after the branch, e.g.
+# sr-build-feature-contained-builds for feature/contained-builds
+
+if [ "$2" == "" ]; then
+  echo usage: $0 sr-build-dir synergy-build-dir
+  exit 1
+fi
+
+if [ -d $1 ]; then
+  SR_BUILD=$1
+else
+  echo source not found: $1
+  exit 1
+fi
+
+SYN_BUILD=$2
+
+if [ -d ${SYN_BUILD} ]; then
+  echo clearing out old ${SYN_BUILD}
+  rm -rf ${SYN_BUILD}
+else
+  mkdir -p ${SYN_BUILD}
+fi
+
+echo ===== SR: NPM INSTALL =====
+cd ${SR_BUILD}
+npm install
+npm ls > build-npm-ls.out
+
+echo ===== SR: GULP =====
+export NODE_ENV=production
+export GULP_AVOID_HG=true
+export PATH=$PATH:$PWD/node_modules/.bin
+gulp test
+gulp lint
+gulp build
+
+echo ===== SR: PACK =====
+TARBALL=`npm pack`
+ln -s $TARBALL ./sr.tar.gz
+
+echo ===== SYNERGY: PREPARE =====
+cd ${SYN_BUILD}
+npm install --production ${SR_BUILD}/$TARBALL
+npm install --production http://npt.techteam.netapp.com/hapi-anode/-/hapi-anode-1.0.0.tgz
+# please keep these sorted for easier maintenance:
+npm install --production \
+    catbox-redis@^1.0.0 \
+    debuglog \
+    good@^5.1.0 \
+    good-console@^4.1.0 \
+    good-file@^4.0.0 \
+    hapi@^8.0.0 \
+    rejoice@^2.0.0 \
+    yar@^3.0.0

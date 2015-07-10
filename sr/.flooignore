@@ -1,0 +1,9 @@
+.hg
+node_modules
+*.tar.gz
+*.tgz
+dist
+dump.rdb
+coverage.html
+*.sublime-*
+vendor

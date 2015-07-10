@@ -1,0 +1,23 @@
+#!/bin/bash -e
+
+if [ "$1" == "" ]; then
+  echo usage: $0 hostname
+  exit 1
+fi
+
+if [ "$2" != "" ]; then
+  SYNERGY_TARBALL=$2
+else
+  if [ ! -d .hg ]; then
+    echo .hg directory not found\; need explicit tarball name
+    echo usage: $0 hostname tarball.tar.gz
+    exit 2
+  fi
+  SAFEBRANCH=`hg branch |  sed 's/\//-/g'`
+  SYNERGY_TARBALL=synergy-${SAFEBRANCH}.tar.gz
+fi
+
+TARGET=deploy@$1
+
+echo Piping ${SYNERGY_TARBALL} to ${TARGET}...
+cat ${SYNERGY_TARBALL} | ssh ${TARGET} /etc/deploy.d/synergy

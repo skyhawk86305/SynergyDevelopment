@@ -1,0 +1,456 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test – Synergy, Rebooted</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base url="../">
+        <link type="text/css" rel="stylesheet" media="all" href="/_bootstrap.css">
+        <link type="text/css" rel="stylesheet" media="all" href="/font-awesome.css">
+        <link type="text/css" rel="stylesheet" media="all" href="/main.css">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="icon" href="/favicon.ico">
+        <style type="text/css"></style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="app">
+                <div>
+                    <header id="masthead">
+                        <div class="logo">
+                            <img src="/media/img/na_logo.png" alt="Logo">
+                        </div>
+                        <div class="breadcrumb-nav">
+                            <a href="/" class="home-link">Synergy</a><span class="current">Test</span>
+                        </div>
+                    </header>
+                    <div id="main-panel">
+                        <div id="content">
+                            <div id="hardware-view">
+                                <div class="context col-xs-3 col-lg-2">
+                                    <div class="hc-installation">
+                                        <div>
+                                            <div class="context-buttons">
+                                                <div class="action-item" tabindex="0">
+                                                    <div class="action-item-icon">
+                                                        <span class="fa fa-cubes fa-fw"></span>
+                                                        <span class="fa fa-plus fa-fw fa-top-right"></span>
+                                                    </div>
+                                                    <span class="action-item-description">Cluster</span>
+                                                </div>
+                                                <div class="action-item" tabindex="0">
+                                                    <div class="action-item-icon">
+                                                        <span class="fa fa-cube fa-fw"></span>
+                                                        <span class="fa fa-plus fa-fw fa-top-right"></span>
+                                                    </div>
+                                                    <span class="action-item-description">Non-Cluster</span>
+                                                </div>
+                                            </div>
+                                            <div class="context-scrollable-region">
+                                                <div class="hc-clusters-block">
+                                                    <div class="hc-clusters-header hide">Clusters:</div>
+                                                    <div class="hc-clusters">
+                                                        <div class="hc-cluster selected">
+                                                            <span class="name">
+                                                                <span class="fa fa-cubes fa-fw"></span>
+                                                                <strong class="budge-other-left">un-named</strong>
+                                                            </span>
+                                                            <div class="group-item">
+                                                                <span class="fa fa-count-description fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>Nodes</span>
+                                                            </div>
+                                                            <div class="group-item">
+                                                                <span class="fa fa-count-description fa-fw">48</span>
+                                                                <span class="fa fa-hdd-o fa-fw"></span>
+                                                                <span>Capacity HDD</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hc-cluster">
+                                                            <span class="name">
+                                                                <span class="fa fa-cubes fa-fw"></span>
+                                                                <strong class="budge-other-left">My Cluster</strong>
+                                                            </span>
+                                                            <div class="group-item">
+                                                                <span class="fa fa-count-description fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>Nodes</span>
+                                                            </div>
+                                                            <div class="group-item">
+                                                                <span class="fa fa-count-description fa-fw">48</span>
+                                                                <span class="fa fa-hdd-o fa-fw"></span>
+                                                                <span>Capacity HDD</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hc-standalone">
+                                                    <div class="hc-standalone-header hide">Other:</div>
+                                                    <div class="hc-standalones">
+                                                        <div class="hc-system">
+                                                            <span class="name">
+                                                                <span class="fa fa-cube fa-fw"></span>
+                                                                <strong class="budge-other-left">Netapp1 / Netapp2</strong>
+                                                            </span>
+                                                            <div class="group-item">
+                                                                <span class="fa fa-count-description fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>Nodes</span>
+                                                            </div>
+                                                            <div class="group-item">
+                                                                <span class="fa fa-count-description fa-fw"></span>
+                                                                <span class="fa fa-hdd-o fa-fw"></span>
+                                                                <span>Embedded</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="report-summary">
+                                        <span class="report-summary-title">Reports</span>
+                                    </div>
+                                </div>
+                                <div class="selected-system col-xs-3 col-lg-2">
+                                        <div class="inset">
+                                            <div class="hagroup-clusters">
+                                                <div class="hagroup-summary">
+                                                    <div class="pull-right">
+                                                        <button class="btn btn-default">Add System</button>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="hagroup-navigation">
+                                                    <div class="group-nav-item selected">
+                                                        <div class="pull-right expand-collapse-toggle">
+                                                            <span class="fa fa-fw fa-chevron-down"></span>
+                                                        </div>
+                                                        <div class="group-title">
+                                                            Group A
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>FAS3220</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link selected">
+                                                                <span class="fa fa-fw">3</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4486 (48x 4TB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-flash fa-fw"></span>
+                                                                <span>1024GB FlashCache</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-code-fork fa-fw"></span>
+                                                                <span>8x 10GbE Front End</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="group-nav-item">
+                                                        <div class="pull-right expand-collapse-toggle">
+                                                            <span class="fa fa-fw fa-chevron-down"></span>
+                                                        </div>
+                                                        <div class="group-title">
+                                                            Group B
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>FAS6220</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">3</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4486 (48x 4TB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4246 (24x 900GB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-flash fa-fw"></span>
+                                                                <span>1024GB FlashCache</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-code-fork fa-fw"></span>
+                                                                <span>8x 10GbE Front End</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="group-nav-item">
+                                                        <div class="pull-right expand-collapse-toggle">
+                                                            <span class="fa fa-fw fa-chevron-down"></span>
+                                                        </div>
+                                                        <div class="group-title">
+                                                            Group C
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>FAS3240</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">3</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4486 (48x 4TB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">4</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4246 (24x 900GB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS2246 (1x 200GB SSD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-flash fa-fw"></span>
+                                                                <span>1024GB FlashCache</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-code-fork fa-fw"></span>
+                                                                <span>8x 10GbE Front End</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="group-nav-item">
+                                                        <div class="pull-right expand-collapse-toggle">
+                                                            <span class="fa fa-fw fa-chevron-down"></span>
+                                                        </div>
+                                                        <div class="group-title">
+                                                            Group D
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-desktop fa-fw"></span>
+                                                                <span>FAS3240</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">3</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4486 (48x 4TB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">4</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS4246 (24x 900GB HDD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw">2</span>
+                                                                <span class="fa fa-inbox fa-fw"></span>
+                                                                <span>DS2246 (1x 200GB SSD)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-flash fa-fw"></span>
+                                                                <span>1024GB FlashCache</span>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#" class="group-link">
+                                                                <span class="fa fa-fw"></span>
+                                                                <span class="fa fa-code-fork fa-fw"></span>
+                                                                <span>8x 10GbE Front End</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="selected-item">
+                                    <div class="inset">
+                                        <div class="hagroup-item">
+                                            <div class="hagroup-nav">
+                                                <span class="hagroup-title">Family</span>
+                                                <span class="hagroup-subtitle pull-right">Editing</span>
+                                            </div>
+                                            <div class="hagroup-content">
+                                                <table class="table table-responsive table-hover table-shelves">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">
+
+                                                            </th>
+                                                            <th scope="col">
+                                                                Hardware
+                                                            </th>
+                                                            <th scope="col">
+                                                                Best For
+                                                            </th>
+                                                            <th scope="col">
+
+                                                            </th>
+                                                            <th scope="col">
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                Unified Storage<br /><em>Data ONTAP</em>
+                                                            </th>
+                                                            <td>
+                                                                <button class="btn btn-default">FAS8000</button><br>
+                                                                <button class="btn btn-default">FAS2500</button>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>
+                                                                      <a href="/us/solutions/virtualization/index.aspx" target="_self">Virtualization</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/service-providers/index.aspx" target="_self">Cloud Services</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/applications/microsoft/index.aspx" target="_self">Microsoft Applications &amp; DB</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/applications/oracle/index.aspx" target="_self">Oracle Applications &amp; DB</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/applications/sap/index.aspx" target="_self">SAP Applications</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/virtualization/desktop/index.aspx" target="_self">Virtual Desktop Infrastructure</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                High Performance SAN Storage<br />
+                                                                <em>E-Series</em>
+                                                            </th>
+                                                            <td>
+                                                                <button class="btn btn-default">E5500</button><br>
+                                                                <button class="btn btn-default">E5400</button><br>
+                                                                <button class="btn btn-default">E2700</button><br>
+                                                                <button class="btn btn-default">E2600</button>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>
+                                                                      <a href="/us/solutions/big-data/index.aspx" target="_self">Big Data</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/industry/high-performance-computing.aspx" target="_self">High Performance Computing</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/big-data/video-surveillance.aspx" target="_self">Video Surveillance Storage</a>
+                                                                    </li>
+                                                                    <li>
+                                                                      <a href="/us/solutions/big-data/lustre.aspx" target="_self">Lustre Solutions</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                Enterprise All-Flash Storage<br /><em>EF-Series</em>
+                                                            </th>
+                                                            <td>
+                                                                <button class="btn btn-default">EF550</button><br>
+                                                                <button class="btn btn-default">EF540</button>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>
+                                                                      <a href="/us/technology/flash-storage/index.aspx" target="_self">Flash-Based Storage</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div class="container-fluid">
+                            <p>
+                                <strong>PRE-ALPHA. IN EARLY DEVELOPMENT. </strong><span>Contacts: Changjie Sun, Mark Sibert, Garth Kidd.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

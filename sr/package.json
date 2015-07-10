@@ -1,0 +1,66 @@
+{
+  "name": "sr",
+  "description": "Synergy 6.0",
+  "version": "0.7.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp",
+    "start": "hapi-bench-test"
+  },
+  "repository": {
+    "type": "hg",
+    "url": "ssh://hg@repo.techteam.netapp.com/sr"
+  },
+  "publishConfig": {
+    "registry": "http://npt.techteam.netapp.com"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "console-polyfill": "^0.1.2",
+    "es5-shim-sham": "0.0.1",
+    "hapi-auto-register": "http://npt.techteam.netapp.com/hapi-auto-register/-/hapi-auto-register-1.0.0.tgz",
+    "lodash": "^2.4.1",
+    "lru-cache": "^2.5.0",
+    "lz-string": "^1.3.3",
+    "nipple": "^2.5.3",
+    "pkginfo": "^0.3.0",
+    "setimmediate": "^1.0.2",
+    "useragent": "^2.1.5",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^8.0.2",
+    "browserify-global-shim": "^1.0.0",
+    "browserify-transform-tools": "^1.3.0",
+    "catbox-memory": "^1.0.1",
+    "david": "^6.0.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-less": "^3.0.0",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-unzip": "^0.1.2",
+    "gulpex": "http://npt.techteam.netapp.com/gulpex/-/gulpex-1.0.0.tgz",
+    "hapi": "^8.0.0",
+    "hapi-anode": "http://npt.techteam.netapp.com/hapi-anode/-/hapi-anode-1.0.1.tgz",
+    "hapi-bench-test": "http://npt.techteam.netapp.com/hapi-bench-test/-/hapi-bench-test-1.1.0.tgz",
+    "hgcmd": "http://npt.techteam.netapp.com/hgcmd/-/hgcmd-2.0.0.tgz",
+    "jshint": "^2.5.0",
+    "jsxhint": "^0.9.0",
+    "lab": "^3.1.1",
+    "moment": "^2.7.0",
+    "open": "0.0.5",
+    "react": "^0.12.2",
+    "react-router": "^0.12.0",
+    "reactify": "^1.0.0",
+    "request": "^2.34.0",
+    "request-progress": "^0.3.1",
+    "through2": "^0.5.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "yar": "^3.0.3"
+  },
+  "peerDependencies": {
+    "hapi": "^8.0.0"
+  }
+}

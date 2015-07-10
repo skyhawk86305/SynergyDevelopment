@@ -1,0 +1,25 @@
+/* Override Bootstrap panels */
+.panel {
+	.rounded(0);
+	>.panel-heading {
+		background: @NetApp-White;
+		border: 0;
+		padding: 5px @grid-gutter-width/2;
+		.rounded(0);
+	}
+	&.panel-primary{
+		>.panel-heading {;
+			border-top: 4px solid @brand-primary;
+			color: @NetApp-Deep-Gray;
+		}
+		>.panel-body {
+		}
+	}
+	&.panel-info{
+		>.panel-heading {
+			border-top: 4px solid @brand-info;
+			color: @NetApp-Deep-Gray;
+		}
+	}
+	border: 0;
+}

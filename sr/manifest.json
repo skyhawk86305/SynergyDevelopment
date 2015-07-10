@@ -1,0 +1,78 @@
+{
+  "plugins": {
+    "./yar": {
+      "cookieOptions": {
+        "password": "no cookies for you",
+        "isSecure": true
+      }
+    },
+    "./hapi-anode": {
+      "sessionSecs": 3600,
+      "client_secret": "secret",
+      "client_id": "sr",
+      "insecure": true,
+      "server": "https://anode-dev.techteam.netapp.com",
+      "paths": {
+        "auth": "/auth",
+        "uid": "user_id",
+        "userDetails": "/verify",
+        "token": "/token"
+      },
+      "redirect_uri_base": "https://127.0.0.1:8443/",
+      "access": {
+        "allow_customer": false
+      }
+    },
+    "../": {
+      "tclip": {
+        "server": "https://tclip-dev.techteam.netapp.com",
+        "insecure": true,
+        "timeout": 150000
+      },
+      "platform_options": {
+        "server": "http://sws-dev.techteam.netapp.com",
+        "path": "/ModelBroker/api/prodinfo/synergy",
+        "cache_ttl_min": 1440
+      },
+      "qadr": {
+        "_localserver": "http://localhost:42854",
+        "_localpath": "/api/document",
+        "_devserver": "http://sws-dev.techteam.netapp.com",
+        "_devserverpath": "/ModelBroker/api/document",
+        "server": "http://sws-dev.techteam.netapp.com",
+        "path": "/ModelBroker/api/document"
+      },
+      "qadv": {
+        "server": "http://sws-dev.techteam.netapp.com",
+        "path": "/ModelBroker/api/visio"
+      }
+    }
+  },
+  "connections": [
+    {
+      "tls": {
+        "key": "-----BEGIN RSA PRIVATE KEY-----\nMIICXgIBAAKBgQCgmZQsGQl078pi1r0smE0CvzsNZXUVC/G5n+tEU45hrG+sboWG\nKP+iTVhstaR1d/dHKu0uhGXzEgR0rcgLQB9A5MP7wFE3R71dfUuiMlj1gI0Kdmm9\n0srGKMSD30mH5qNl97Uv+cL1oWeddEsa1MO+udmYNR9nKegr/14pzI97bwIDAQAB\nAoGADjmsSz+oe8glqB2XQhT3dU/U/jnHZibZsXR91V6FVRd+CMr9XsXQ5uJs+6wX\nNiR7Lb2apq0pjp9A78jY2E5EtknfW/1aO0G1wNuuVLCpq/IB3Jr5xQU8xab/UXsY\nTHiKZt4j9SYpBCD7UOxmkfy74HjdrvTHNDnC8L8HieUkvoECQQDPIb+QdI0BmaSK\nJM2TabA0NPT++9xkgQTXkIruISy5y1QWwBswAhIT4/jMBHU4JUOY8n/daZiFlQpy\nnfJVQmXBAkEAxn1q8hF4T7Vyl18V7t8xBsNOzbdZ6VYFEJkSi7zQy/ZN6z2GS8v9\nQ1zW5k2CaBogx3YTKZ5j1VtEY9uP2zQNLwJBALGgBlARsu4hXNnej7CPnLxYgZS8\nVZaWkZluacWmC13VAOp1mZsE243VHQGP/RnF0v8xTfeI23QKiKgbzLnSs8ECQQCr\nAG/7fluFaFAB4xRVSAnHxsmEZ1rZsJcKdqXIp3HG1jrI2Kdzc5mMyFYH8WzQ3Pmy\nfaICsAdYT5m64fSsp8pXAkEAwCuNYSB5BUkPwIUe1OxOg8727j81ghC+CIB1Nv3x\n18mK+PeAOe6iPSWj2tD4MsXF5TsNHTtML6DLkJIUlXS+NA==\n-----END RSA PRIVATE KEY-----\n",
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICATCCAWoCCQDSZuynLbZq3zANBgkqhkiG9w0BAQUFADBFMQswCQYDVQQGEwJB\nVTETMBEGA1UECBMKU29tZS1TdGF0ZTEhMB8GA1UEChMYSW50ZXJuZXQgV2lkZ2l0\ncyBQdHkgTHRkMB4XDTE0MTAwNzE0NTEzM1oXDTE0MTEwNjE0NTEzM1owRTELMAkG\nA1UEBhMCQVUxEzARBgNVBAgTClNvbWUtU3RhdGUxITAfBgNVBAoTGEludGVybmV0\nIFdpZGdpdHMgUHR5IEx0ZDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAoJmU\nLBkJdO/KYta9LJhNAr87DWV1FQvxuZ/rRFOOYaxvrG6Fhij/ok1YbLWkdXf3Ryrt\nLoRl8xIEdK3IC0AfQOTD+8BRN0e9XX1LojJY9YCNCnZpvdLKxijEg99Jh+ajZfe1\nL/nC9aFnnXRLGtTDvrnZmDUfZynoK/9eKcyPe28CAwEAATANBgkqhkiG9w0BAQUF\nAAOBgQCPtgLU83S23Xgck5+7I1fxOiHCm6d+ACZkN0PgM969/Al9/q9Tgc5bX+rO\nEsy8PzOekWI3EJ3W2joyuwEuc6nb06lXuHF08uz3O1HDZ4+H5WL6YI+7/e6xPTaS\nZLzRFacOk6mLQ8f3E5LfuhwpPGuDAd468/CGZKwcTvn6A3LY8w==\n-----END CERTIFICATE-----\n",
+        "ca": []
+      },
+      "routes": {
+        "cors": true,
+        "payload": {
+          "maxBytes": 20000000
+        }
+      },
+      "labels": [
+        "sr",
+        "yar"
+      ],
+      "address": "127.0.0.1",
+      "port": 8443
+    }
+  ],
+  "server": {
+    "cache": {
+      "engine": "./catbox-memory",
+      "shared": true
+    }
+  }
+}

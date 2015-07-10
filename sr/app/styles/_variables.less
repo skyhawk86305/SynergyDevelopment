@@ -1,0 +1,83 @@
+/* Definitions from the official NetApp color palette: */
+
+/* Primary Web Colors */
+@NetApp-Blue: #0067C5;
+@NetApp-White: #FFFFFF;
+@NetApp-Deep-Gray: #454545;
+
+/* Below to be used for visited links. */
+@NetApp-Cyan: #009FDA;
+
+/* Neutral Palette */
+@NetApp-Light-Gray: #C8C9C7;
+@NetApp-Gray: #9EA2A2;
+@NetApp-Dark-Gray: #5B6770;
+@NetApp-Black: #000000;
+
+/* Accent Colors */
+@NetApp-Green: #84BD00;
+@NetApp-Purple: #5F259F;
+@NetApp-Red: #C8102E;
+@NetApp-Orange: #E87722;
+@NetApp-Yellow: #F2A900;
+
+/* Extended Palette */
+@NetApp-Light-Green: #A4D65E;
+@NetApp-Light-Blue: #6CACE4;
+@NetApp-Light-Purple: #A05EB5;
+@NetApp-Light-Red: #FCAFC0;
+@NetApp-Light-Orange: #FFB25B;
+@NetApp-Light-Yellow: #FBD872;
+
+@NetApp-Dark-Green: #658D1B;
+@NetApp-Dark-Blue: #003B5C;
+@NetApp-Dark-Purple: #512D6D;
+@NetApp-Dark-Red: #AF272F;
+@NetApp-Dark-Orange: #BE531C;
+@NetApp-Dark-Yellow: #C99700;
+
+/* Framework and Navigational Colors */
+@NetApp-Link: #0077C0;
+@NetApp-Outline: #CCCCCC;
+@NetApp-Bars: #C3DCED;
+
+@Unfinished: average(@NetApp-Light-Red, @NetApp-White);
+
+/* Mapping those to Bootstrap 3's LESS variables:
+ * http://getbootstrap.com/customize/#less-variables
+ */
+@brand-primary: @NetApp-Blue;
+@brand-success: @NetApp-Green;
+@brand-warning: @NetApp-Orange;
+@brand-danger: @NetApp-Red;
+@brand-info: @NetApp-Light-Gray;
+
+@link-color: @brand-primary;
+@link-hover-color: @brand-primary;
+@link-visited: @NetApp-Cyan; /* http://www.netapp.com/us/static/css/basic.desktop.ltr.css */
+@body-bg: @NetApp-White;
+@text-color: @NetApp-Deep-Gray; /* http://brand.netapp.com/webstyleguide/color.html */
+@font-family-sans-serif: 'Helvetica Neue', Helvetica, Roboto, Arial;
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-size-base: 12px;
+
+@titlebar-height: 74px;
+@breadcrumb-height: 32px;
+@sticky-footer-height: 24px;
+
+/* Grays: */
+@gray-darker:            @NetApp-Dark-Gray;
+@gray-dark:              @NetApp-Dark-Gray;
+@gray:                   @NetApp-Gray;
+@gray-light:             @NetApp-Light-Gray;
+@gray-lighter:           @NetApp-Light-Gray;
+
+/* Clean team style: */
+@border-radius-base: 3px;
+@border-radius-small: 2px;
+@border-radius-large: 4px;
+
+/* Paths: */
+@icon-font-path: '/fonts/';
+
+@global-padding: 10px;

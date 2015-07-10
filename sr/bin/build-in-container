@@ -1,0 +1,31 @@
+#!/bin/bash
+# build this software into a Docker container
+# usage: build-in-container [--rm] [--no-cache]
+# in dev, use --rm=false for faster builds
+# in prod, use --no-cache=true to force doing it from scratch
+set -e # halt when command fails
+SHORT=sr
+BRANCH=`hg branch`
+SAFEBRANCH=`hg branch |  sed 's/\//-/g'`
+PARENT=`hg parent | grep changeset | cut -f 3 -d :`
+REGISTRY=registry.techteam.netapp.com:80
+IMAGE=${SHORT}-build-${SAFEBRANCH}
+WHERE=`mktemp -d /tmp/${SHORT}.XXXX`
+APTMIRROR=apt-mirror.ops.techteam.netapp.com
+
+echo "clone to: ${WHERE} at ${PARENT} on ${BRANCH}"
+hg clone -r ${PARENT} . ${WHERE}
+
+if hg status -mardc -n | grep -e ^ > /dev/null; then
+    echo "apply local changes"
+    hg diff --git | patch -d ${WHERE} -p1
+fi
+
+cd ${WHERE}
+/bin/bash bin/update-version-file
+if host ${APTMIRROR} > /dev/null 2>&1 ; then
+    sed -i~ "s#^ENV APT_MIRR.*#ENV APT_MIRR http://${APTMIRROR}/ubuntu#" Dockerfile
+fi
+
+echo "build ${IMAGE}"
+docker build $* -t=${IMAGE} .

@@ -1,0 +1,117 @@
+.headerText
+{
+    position: absolute;
+    top: 35px;
+    font-size: 40px;
+    line-height: 50px;
+}
+.headerUtilities
+{
+    float: right;
+    padding-right: 9px;
+    padding-top: 18px;
+}
+.headerUtilities a
+{
+    text-decoration: none;
+    float: left;
+}
+.headerButtonIcon
+{
+    width: 44px;
+    height: 30px;
+    cursor: pointer;
+    display: block;
+}
+
+/* Navigation Links */
+.header-nav ul
+{
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    z-index: 500;
+    vertical-align: middle;
+}
+.header-nav ul > li
+{
+    display: block;
+    float: left;
+    line-height: 1.7em;
+}
+.header-nav ul > li > a
+{
+    position: relative;
+    display: block;
+    z-index: 50;
+}
+.header-nav > ul > li > a {
+    color: @NetApp-White;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+}
+.header-nav > ul > li:not(:first-child) > a:before
+{
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    color: #6CACE4;
+}
+.header-nav > ul > li:hover > a
+{
+    background-color: @NetApp-White;
+    color: @NetApp-Blue;
+    border: 1px solid @NetApp-Blue;
+    border-bottom: 0;
+}
+.header-nav > ul > li:hover > a:before
+{
+    content: "" !important;
+}
+.headerSubMenu
+{
+    position: absolute;
+    display: none;
+    width: 220px;
+    top: 30px;
+    left: 40px;
+    text-align: left;
+    background-color: #FFF;
+    padding: 7px 7px 21px;
+    border: 1px solid #025fbc;
+    border-top: none;
+    z-index: 999;
+}
+.header-nav > ul > li:hover > .headerSubMenu {
+    display: block;
+}
+.subMenuHeader
+{
+    color: #000000;
+    font-weight: bold;
+    font-size: 11px;
+}
+.headerSubMenu > ul {
+    position: relative;
+    display: block;
+    color: #025fbc !important;
+}
+.headerSubMenu > ul > li {
+    width: 170px !important;
+    background: url('/media/img/greenArrow.png') no-repeat left center;
+    margin-left: -30px;
+}
+.headerSubMenu > ul > li > a{
+    text-decoration: none;
+    font-size: 11px;
+    color: #025fbc !important;
+    padding-left: 10px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+#version {
+    text-align: right;
+}

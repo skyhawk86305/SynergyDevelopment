@@ -1,0 +1,42 @@
+// Fix Bootstrap's hard-coding of popover padding and border radius:
+
+// .popover-title {
+//   margin: 0; // reset heading margin
+//   padding: 8px 14px;
+//   font-size: @font-size-base;
+//   font-weight: normal;
+//   line-height: 18px;
+//   background-color: @popover-title-bg;
+//   border-bottom: 1px solid darken(@popover-title-bg, 5%);
+//   border-radius: 5px 5px 0 0;
+// }
+
+// .popover-content {
+//   padding: 9px 14px;
+// }
+
+// .popover-title border-radius:         5px;
+// default @border-radius-base:          4px;
+// default @border-radius-large:         6px;
+//
+// .popover-title padding-vertical:      8px;
+// .popover-content padding-vertical:    9px;
+// default @padding-base-vertical:       6px;
+// default @padding-large-vertical:     10px;
+//
+// .popover-title padding-horizontal:   14px;
+// .popover-content padding-horizontal: 14px;
+// default @padding-base-horizontal:    12px;
+// default @padding-large-horizontal:   16px;
+
+.popover-title {
+  padding-top: @padding-base-vertical;
+  padding-right: @padding-base-horizontal;
+  padding-bottom: 0px; // eliminate double-padding between title and content
+  padding-left: @padding-base-horizontal;
+  border-radius: @border-radius-base @border-radius-base 0 0;
+}
+
+.popover-content {
+  padding: @padding-base-vertical @padding-base-horizontal;
+}

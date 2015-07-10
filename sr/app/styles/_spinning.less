@@ -1,0 +1,19 @@
+// Spinning Icons
+// --------------------------
+@spin-rate: 1s;
+@spin-x: 50%;
+@spin-y: 50%;
+
+.fa-spin {
+  animation: spin @spin-rate infinite linear;
+  transform-origin: @spin-x @spin-y;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,73 @@
+.column {
+	height: 100%;
+	background-color: #f8f8f8;
+	box-shadow: 0px 0px 2px #ccc;
+	transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+	&.column-light {
+		background-color: @NetApp-White;
+	}
+	.column-header {
+		padding: @global-padding;
+		height: 38px;
+		overflow: hidden;
+		white-space: nowrap;
+		h1 {
+			margin: 0;
+			float: left;
+			color: @NetApp-Dark-Gray;
+			font-size: 1.5em;
+			font-weight: 300;
+		}
+	}
+}
+
+// Right now scrollable's top is controlled by inline styles in React
+// based on component. Need a better way to do this.
+.scrollable {
+	overflow: auto;
+	position: absolute;
+	top: 42px;
+	bottom: 0;
+	width: 100%;
+}
+
+.action-links {
+	position: absolute;
+	right: @global-padding;
+	font-size: 1.2em;
+	.action-link {
+		cursor: pointer;
+		color: @NetApp-Blue;
+		padding: @global-padding/2 @global-padding*0.75;
+		margin: 0 @global-padding/4;
+		line-height: 1.5em;
+		&.toggle:hover {
+			border-bottom: 2px solid @NetApp-Blue;
+		}
+		&.selected {
+			color: @NetApp-Dark-Gray;
+			border-bottom: 2px solid @NetApp-Dark-Gray !important;
+		}
+		&.disabled {
+			color: @NetApp-Gray;
+			cursor: default;
+		}
+	}
+}
+
+.selectable {
+	box-shadow: inset 4px 0px 0px transparent;
+	cursor: pointer;
+	&:hover {
+		box-shadow: inset 4px 0px 0px @NetApp-Blue;
+	}
+	&.selected {
+		box-shadow: inset 4px 0px 0px @NetApp-Dark-Gray !important;
+	}
+}
+
+.footnote {
+	margin: @global-padding;
+	font-size: 0.9em;
+	color: @NetApp-Gray;
+}

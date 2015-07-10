@@ -1,0 +1,294 @@
+.count-of {
+  display: inline-block;
+}
+
+.count-num {
+  // light is too light
+  // how should we distinguish it?
+  // desaturated color?
+  color: @NetApp-Dark-Gray;
+}
+
+.count-what {
+  color: @NetApp-Dark-Gray;
+}
+
+.project-title {
+  font-size: 14px;
+}
+
+.sep {
+  color: @NetApp-Light-Gray;
+}
+
+.drive-summary-block {
+  .drive-count {
+    display: inline-block;
+    width: 2.5em; // enough for 24K?
+    // width: 4em; // enough for 24,000
+    text-align: right;
+  }
+  .drive-label {
+    display: inline-block;
+    width: 9em; // wide enough for "Performance HDD"
+  }
+  .drive-label-size {
+    display: inline-block;
+    width: 6.3em;
+  }
+  .drive-rawtb {
+    display: inline-block;
+    width: 3.2em; // wide enough for 99999
+    padding-right: 0.25em;
+    text-align: right;
+  }
+  .fa {
+    margin: 0 0.5em 0 0.5em;
+  }
+  .text-mute {
+    color: @NetApp-Gray;
+    font-style: normal;
+  }
+}
+
+.project-auto-description>div {
+  .pad-header {
+    display: inline-block;
+    width: 60px;
+  }
+  .pad-drive-col2 {
+    width: 5em;
+  }
+}
+
+.pad-tag {
+  color: @NetApp-Light-Gray;
+  font-size: 85%;
+  border: 1px solid transparent;
+  border-color: #e4e4e4; // even lighter grey
+  border-radius: 1px;
+  padding: 2px;
+  margin-bottom: 2px;
+}
+
+.projects {
+  height: 100%;
+  overflow: auto;
+}
+
+.motd {
+  overflow: auto;
+  background-color: @NetApp-White;
+  height: 100%;
+  padding: @grid-gutter-width/2 !important;
+}
+
+.project-list {
+  background-color: #fafafa;
+  overflow: auto;
+  position: absolute;
+  top: 32px;
+  bottom: 0;
+  width: 100%;
+  .row-list-item {
+    .row-list-cell:first-child {
+      padding-left: 1em;
+    }
+  }
+}
+
+.project-entry {
+  border-bottom: 1px solid #ddd;
+  background-color: @NetApp-White;
+  position: relative;
+  padding: @grid-gutter-width/2;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .project-title {
+    padding: 0;
+    padding-bottom: 0;
+    height: 40px;
+    &.edit-mode {
+      .edit-title {
+        position: relative;
+        .form-control {
+          padding-right: 88px;
+          &::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+          }
+        }
+        .form-control:focus {
+          border-color: @NetApp-Dark-Gray;
+        }
+        .toolstrip {
+          position: absolute;
+          right: @grid-gutter-width/2;
+          top: 0;
+        }
+      }
+    }
+    .btn {
+      background: transparent !important;
+      font-size: 14px;
+      width: 44px;
+      &:last-child {
+        margin-right: -@grid-gutter-width/2;
+      }
+    }
+    .project-date {
+      display: block;
+      color: @NetApp-Dark-Gray;
+      font-size: 12px;
+    }
+  }
+  .project-list-pencil {
+    color: @NetApp-Light-Gray;
+  }
+  &:hover {
+    background-color: @NetApp-White;
+    .project-list-pencil {
+      color: inherit;
+    }
+  }
+  .project-auto-description {
+    min-height: 48px;
+  }
+}
+
+.project-pane {
+  height: 100%;
+  border-right: 1px solid #ddd;
+}
+
+.project-search {
+  height: 32px;
+  position: relative;
+  background-color: #eaeaea;
+  .form-control {
+    font-size: 14px;
+    padding-left: 1.2em;
+    padding-right: 3.2em;
+    border: 0;
+    border-radius: 0;
+    &:focus {
+      border-color: @NetApp-Gray;
+    }
+  }
+  .btn {
+    padding-right: 1em;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+  }
+}
+
+/*.project-title {
+  height: 32px;
+  .btn, .icon-budge-left {
+    font-size: 14px;
+  }
+  .icon-budge-left {
+    margin-left: -6px !important;
+    padding-right: 6px;
+    background: transparent !important;
+  }
+}
+.project-title {
+  .input-group {
+    margin-right: 200px;
+    .form-control {
+      background-color: @NetApp-White;
+      border: 1px solid @NetApp-Gray;
+      color: @NetApp-Dark-Gray;
+      font-size: 14px;
+      position: relative;
+      padding-left: 29px;
+    }
+    .icon-budge-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+    }
+    span.icon-budge-left {
+      padding: 9px 6px 8px 15px;
+    }
+    .input-group-btn .btn {
+      font-size: 14px;
+    }
+  }
+}
+*/
+
+.pad1em {
+  padding: 1em;
+}
+
+.archive-project-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 0.5em;
+  font-size: 16px;
+  color: #777;
+  z-index: 999;
+  .inner {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.edit-strip {
+  position: relative;
+  list-style-type: none;
+  z-index: 200;
+  .edit-strip-items {
+    margin: 0;
+    padding: 0;
+    padding-right: 1em;
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    top: 20px;
+    background-color: #fff;
+    right: 0;
+    border: 1px solid #ccc;
+    li {
+      padding-right: 1em;
+      border-left: 4px solid transparent;
+    }
+    li:hover {
+      border-left: 4px solid @NetApp-Blue;
+    }
+    .btn {
+      padding-left: 0.5em;
+      width: auto;
+      font-size: 12px;
+      .fa {
+        margin-right: 1em;
+      }
+    }
+  }
+  &>li:hover {
+    .edit-strip-items {
+      display:block;
+    }
+  }
+  &.edit-strip-items:hover {
+    display: block;
+  }
+}

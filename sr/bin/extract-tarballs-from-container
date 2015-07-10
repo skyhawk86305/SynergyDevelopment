@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+BRANCH=`hg branch`
+SAFEBRANCH=`hg branch |  sed 's/\//-/g'`
+IMAGE=sr-build-${SAFEBRANCH}
+SR_TARBALL=sr-${SAFEBRANCH}.tar.gz
+SYNERGY_TARBALL=synergy-${SAFEBRANCH}.tar.gz
+
+echo Extracting tarballs from $IMAGE:
+
+echo ${SR_TARBALL}...
+docker run --rm -w /build ${IMAGE} cat sr/sr.tar.gz > ${SR_TARBALL}
+
+echo ${SYNERGY_TARBALL}...
+docker run --rm -w /build ${IMAGE} tar cfz - synergy > ${SYNERGY_TARBALL}
+
+echo done.

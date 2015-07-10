@@ -1,0 +1,919 @@
+.sep {
+  color: @NetApp-Light-Gray;
+}
+
+.clusters, .hc-standalones {
+  margin-top: @global-padding;
+}
+
+.group-type-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: @NetApp-Dark-Gray;
+  padding-left: @global-padding;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  margin-right: 1em;
+  .action {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 4px;
+    color: @NetApp-Blue;
+  }
+}
+
+.grouping-label, .sub-grouping-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: @NetApp-Dark-Gray;
+  padding-left: @global-padding;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  margin-right: 1em;
+  .action {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 4px;
+    color: @NetApp-Blue;
+  }
+}
+
+.sub-grouping-label {
+  border: 0;
+  font-size: 1.2em;
+}
+
+.drive-type {
+  padding-left: 0.5em;
+}
+
+.name {
+  display: block;
+  color: @NetApp-Dark-Gray;
+  font-weight: 400;
+  font-size: 1.2em;
+  padding-left: @global-padding;
+}
+
+.sub-name {
+  padding-left: @global-padding - 4;
+}
+
+.system {
+  margin-left: @global-padding/2;
+  margin-bottom: @global-padding/2;
+}
+
+// Not sure what mono is for
+.mono, .hide {
+  display: none;
+}
+
+#hardware-view {
+  height: 100%;
+}
+
+.filter-pane {
+  .btn-group {
+    margin: 4px;
+  }
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.btn-group .btn + input + .btn {
+  margin-left: -1px;
+}
+input[type=radio] {
+  display: none;
+  visibility: hidden;
+}
+
+.contracted-view {
+  .hide-contracted {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  }
+  .hide-contracted-full{
+    display: none !important;
+  }
+}
+
+.expanded-view {
+  .hide-contracted, .hide-contracted-full {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
+}
+
+.no-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.read-only-value {
+  .input-count;
+  display: inline-block;
+  padding: 1px;
+  margin-right: 21px;
+}
+
+.aggregate-editor {
+  padding: 1em;
+  padding-top: 0;
+  .ae-name, .ae-header {
+    font-weight: bold;
+    color: @NetApp-Dark-Gray;
+  }
+  .aggregate-editor-options {
+    float: left;
+    vertical-align: top;
+    width: 250px;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    .row-list-item:first-child {
+      border-top: 0;
+    }
+  }
+  .aggregate-editor-extended-options {
+    vertical-align: top;
+    margin-left: 262px;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    .row-list-item:first-child {
+      border-top: 0;
+    }
+  }
+  .aggregate-editor-summary {
+    background-color: @NetApp-White;
+    border-bottom: 1px solid #ddd;
+  }
+  .ae-option {
+    padding: 0.4em;
+  }
+  .ae-disk-btn {
+    margin-left: 0.5em;
+  }
+  .ae-summary-title {
+    font-size: 20px;
+  }
+  .ae-summary {
+    th, td {
+      padding: 0.25em 0.5em;
+    }
+  }
+
+  .ae-summary-graph {
+    padding: @global-padding;
+    .ae-summary-bar-container {
+      fill: @NetApp-Light-Gray;
+    }
+    .ae-summary-bar-snap-reserve {
+      fill: @NetApp-Green;
+    }
+    .ae-summary-bar-usable-capacity {
+      fill: @NetApp-Blue;
+    }
+    .ae-summary-bar-aggregate-size {
+      fill: @NetApp-Yellow;
+    }
+    .ae-summary-bar-parity-drives {
+      fill: @NetApp-Green;
+    }
+    .ae-summary-bar-data-drives {
+      fill: @NetApp-Blue;
+    }
+    .ae-summary-bar-mirrored-drives {
+      fill: @NetApp-Purple;
+    }
+    .ae-summary-bar-total-drives {
+      fill: @NetApp-Yellow;
+    }
+  }
+}
+
+.ae-option-input {
+  width: 190px;
+}
+
+.ae-button-pane {
+  text-align: center;
+  .btn {
+    width: 80%;
+  }
+}
+
+/* CLEANED UP LESS STRUCTURE HERE */
+.row-list {
+  width: 100%;
+  th {
+    padding: 0.5em;
+    color: @NetApp-Dark-Gray;
+  }
+}
+table.row-list {
+  border-collapse: separate;
+}
+.row-list-item-grouping {
+  box-shadow: 0px 0px 2px #ccc;
+  margin: 1px 5px 5px;
+}
+.row-list-item {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: @NetApp-White;
+  &.new {
+    background-color: @NetApp-White;
+    color: @NetApp-Blue;
+    border-top: 0;
+  }
+  &.header {
+    background-color: #eee;
+  }
+  &.no-border {
+    border: 0;
+  }
+  &.no-color {
+    background-color: transparent;
+  }
+  &.selectable {
+    cursor: pointer;
+  }
+  &.selectable:hover {
+    background-color: @NetApp-White;
+  }
+  &.selected {
+    &.new {
+      color: @NetApp-Dark-Gray !important;
+    }
+  }
+  &.disabled-selection {
+    cursor: default;
+    background-color: @NetApp-White;
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(255,255,255,0.6);
+      content: ' ';
+    }
+  }
+  .chevron {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -9px;
+  }
+  &.disabled {
+    .chevron {
+      color: @NetApp-Gray !important;
+    }
+  }
+  .toolstrip {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -14px;
+  }
+  .row-list-cell {
+    display: table-cell;
+    vertical-align: top;
+    overflow: hidden;
+    padding: 0.5em;
+    &.row-list-cell-nopad {
+      padding: 0;
+    }
+    &.icon-tag-grouping {
+      .disable-tag {
+        color: #ddd !important;
+      }
+      .fa {
+        display: inline;
+        padding: 0 0.5em;
+      }
+    }
+    &.row-list-cell-aggr-icon {
+      width: 52px;
+      min-width: 52px;
+    }
+    &.row-list-cell-aggr-name {
+      width: 100px;
+      min-width: 100px;
+    }
+    &.row-list-cell-aggr-controller {
+      width: 60px;
+      min-width: 60px;
+    }
+    &.row-list-cell-aggr-devices {
+      width: 120px;
+      min-width: 120px;
+    }
+    &.row-list-cell-aggr-size {
+      width: 80px;
+      min-width: 80px;
+    }
+    &.row-list-cell-xs {
+      width: 3.5em;
+      min-width: 3.5em;
+    }
+    &.row-list-cell-s {
+      width: 7em;
+      min-width: 7em;
+    }
+    &.row-list-cell-m {
+      width: 14em;
+      min-width: 14em;
+    }
+    &.row-list-cell-l {
+      width: 16em;
+      min-width: 16em;
+    }
+    &.row-list-cell-middle {
+      vertical-align: middle;
+    }
+    &.row-list-cell-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: right;
+    }
+  }
+  .row-list-cell:first-child {
+    border-left: 4px solid transparent;
+  }
+  &.row-list-item-condensed {
+    border: 0;
+    .row-list-cell {
+      height: auto;
+      padding: 0.2em;
+    }
+  }
+  &.row-list-item-group-next {
+    border-bottom: 0;
+    .row-list-cell {
+      padding-bottom: 0;
+    }
+  }
+  &.new, &.header {
+    .row-list-cell {
+      height: 40px;
+      vertical-align: middle;
+    }
+  }
+  &.row-list-item-option {
+    // was same as row-list-item-loose
+    // now deprecated
+    // TODO: remove after no longer used in aggregate editor
+    // e.g. after replacing with plain row-list-item
+  }
+  &.row-list-item-loose {
+    .row-list-cell {
+      padding: 1em;
+    }
+    .chevron {
+      margin-top: -10px;
+      font-size: 14px;
+    }
+    .toolstrip {
+      margin-top: -16px;
+      .btn {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.capacity-summary {
+  td {
+    .no-overflow;
+  }
+}
+
+.aggregate-type-header td {
+  background-color: #eee;
+  padding: 1em 0.5em;
+  font-weight: 500;
+  color: #777;
+  border-top: 1px solid #ddd;
+}
+
+.row-list-item-option-header, .row-list-item-aggregate-header {
+  .emphasize;
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+  background-color: #eee;
+  .option-header-link {
+    float: right;
+    cursor: pointer;
+    font-weight: 200;
+    color: @NetApp-Blue;
+  }
+}
+
+.row-list-item-aggregate-header {
+  padding-left: 0;
+}
+
+table.row-list {
+  .row-list-item {
+    td {
+      border-bottom: 1px solid #e3e3e3;
+    }
+    &.no-border td {
+      border-bottom: 0;
+    }
+  }
+}
+
+.emphasize {
+  font-weight: 600;
+  color: @NetApp-Dark-Gray;
+}
+
+.count-icon-grouping {
+  .count {
+    display: inline-block;
+    width: 1.5em;
+    text-align: right;
+  }
+  .icon {
+    display: inline-block;
+    text-align: center;
+    padding: 0 0.2em;
+  }
+  .item {
+    display: inline-block;
+    text-align: left;
+    .capacity-count {
+      display: inline-block;
+      width: 4em;
+    }
+  }
+}
+
+.summary-view {
+  overflow: hidden;
+  .summary-image {
+    padding: 1em;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    min-width: 190px;
+    img {
+      max-width: 140px;
+    }
+  }
+  .summary-info {
+    padding: 1em;
+    width: 100%;
+    display: table-cell;
+    overflow: hidden;
+    vertical-align: top;
+  }
+}
+
+.input-count {
+  width: 2.5em;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  .emphasize;
+}
+
+.shelf-img, .controller-img {
+  max-width: 130px;
+  border-radius: 2px;
+}
+
+.placeholder-pane {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  text-align: center;
+  font-size: 18px;
+  color: @NetApp-Gray;
+  .placeholder-loading-text {
+    float: left;
+    margin-left: -12px;
+  }
+  .glyphicon {
+    float: left;
+    font-size: 32px;
+    margin-top: -36px;
+  }
+}
+
+.product-grouping {
+  display: block;
+  padding: 0.5em;
+  .product-image {
+    display: table-cell;
+    vertical-align: top;
+    padding-top: 0.8em;
+    padding-right: 1em;
+    img {
+      margin-left: -75px;
+    }
+    &.disabled img {
+      filter: opacity(25%);
+    }
+  }
+  .product-links {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+.contracted-view .product-links {
+  display: block;
+}
+
+.expand-collapse-toggle {
+  color: @NetApp-Blue;
+  font-weight: 200;
+  padding-right: 0.25em;
+}
+
+.numeric {
+  text-align: right;
+}
+
+.capacity-summary, .drive-summary {
+  padding: 4px 1em;
+  table {
+    width: 100%;
+    &+table {
+      margin-top: 0.4em;
+    }
+    thead {
+      tr {
+        th {
+          text-align: left;
+          color: @NetApp-Dark-Gray;
+          font-weight: 500;
+        }
+        th.numeric {
+          text-align: right;
+        }
+      }
+    }
+    tbody {
+      tr {
+        &.drive-class-row th, &.drive-class-row td {
+          padding-top: 0.5em;
+        }
+        th {
+          color: @NetApp-Dark-Gray;
+          font-weight: 300;
+        }
+        td {
+          text-align: left;
+          .drive-breakdown {
+            color: @NetApp-Gray;
+            .fa {
+              color: @NetApp-Gray !important;
+            }
+          }
+        }
+        td.numeric {
+          text-align: right;
+          padding-left: 0.5em;
+        }
+        &.drive-total {
+          border-top: 1px solid #ddd;
+        }
+      }
+      &.last-row tr:last-child {
+        td {
+          padding-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.controller {
+  .fa {
+    color: @NetApp-Blue;
+  }
+}
+
+.drive-ssd {
+  .fa {
+    color: @NetApp-Purple;
+  }
+}
+
+.drive-performance {
+  .fa {
+    color: @NetApp-Green;
+  }
+}
+
+.drive-capacity {
+  .fa {
+    color: @NetApp-Red;
+  }
+}
+
+.drive-total {
+  .fa {
+    color: @NetApp-Black;
+  }
+}
+
+.fa-toggle-on {
+  color: @NetApp-Green;
+}
+
+.fa-flash {
+  color: @NetApp-Yellow !important;
+}
+
+.fa-key {
+  color: @NetApp-Black !important;
+}
+
+.fa-pie-chart {
+  color: #777 !important;
+}
+
+.environmental-summary {
+  padding: 0.4em 1em;
+  table {
+    width: 100%;
+    thead th {
+      color: @NetApp-Dark-Gray;
+      font-weight: 500;
+    }
+    tbody + tbody > tr:first-child {
+      td, th {
+        padding-top: 1em;
+      }
+    }
+    tbody th {
+      padding-left: 1em;
+      font-weight: 300;
+      color: @NetApp-Dark-Gray;
+    }
+  }
+}
+.results-subheading-button-group {
+  top:-3px;
+}
+.results-subheading-button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+.coming-soon {
+  border-radius: 4px;
+  background-color: #eee;
+  height: 4em;
+  width: 100%;
+  text-align: center;
+}
+
+.coming-soon-text {
+  line-height: 2em;
+  font-weight: 500;
+  color: @NetApp-Light-Gray;
+  font-size: 24px;
+}
+
+.version-info-text {
+  font-size: 60%;
+  color: #bbb;
+}
+
+.user-info {
+  text-align: right;
+  margin-right: 0.5em;
+  line-height: 1em;
+}
+
+.confirm-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 0.5em;
+  font-size: 16px;
+  color: #777;
+  z-index: 999;
+  .inner {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.policy-option {
+  margin: 1em 1em 0 1em;
+}
+
+.device-type-name {
+  text-transform: capitalize;
+}
+
+.disabled-config-text {
+  padding: 1em;
+  display: block;
+  color: #777;
+}
+
+.limit-reasons {
+  display: block;
+  .limit-reason-first {
+    min-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Flash Pool */
+@fp-allocation-row-width: 250px;
+@fp-allocation-block-width: 128px; //Multiple of 28 if possible
+@fp-allocation-remove-width: 24px;
+@fp-allocation-unit-width: @fp-allocation-block-width/28;
+
+.fp-allocation-row-new {
+  border: 1px dashed @NetApp-Light-Blue;
+  color: @NetApp-Light-Blue;
+  width: @fp-allocation-block-width;
+  padding: 0.5em;
+  cursor: pointer;
+  margin-left: @fp-allocation-remove-width;
+  &:hover {
+    border-color: @NetApp-Blue;
+    color: @NetApp-Blue;
+  }
+}
+.fp-allocation-row {
+  padding: 1em 0.5em;
+  .fp-allocation-row-ssd-size{
+    margin-left: @fp-allocation-remove-width;
+    color: #777;
+    padding: 0.25em 0.75em;
+  }
+  .fp-allocation-remove-block {
+    width: @fp-allocation-remove-width;
+    min-height: 1px; // Allows div to show when there's no elements inside.
+    float: left;
+  }
+  .fp-allocation-block {
+    float: left;
+    width: @fp-allocation-unit-width*28;
+    >div {
+      width: 100%;
+    }
+    /*
+    .fp-allocation-size-1 { width: @fp-allocation-unit-width; }
+    .fp-allocation-size-2 { width: @fp-allocation-unit-width*2; }
+    .fp-allocation-size-3 { width: @fp-allocation-unit-width*3; }
+    .fp-allocation-size-4 { width: @fp-allocation-unit-width*4; }
+    .fp-allocation-size-5 { width: @fp-allocation-unit-width*5; }
+    .fp-allocation-size-6 { width: @fp-allocation-unit-width*6; }
+    .fp-allocation-size-7 { width: @fp-allocation-unit-width*7; }
+    .fp-allocation-size-8 { width: @fp-allocation-unit-width*8; }
+    .fp-allocation-size-9 { width: @fp-allocation-unit-width*9; }
+    .fp-allocation-size-10 { width: @fp-allocation-unit-width*10; }
+    .fp-allocation-size-11 { width: @fp-allocation-unit-width*11; }
+    .fp-allocation-size-12 { width: @fp-allocation-unit-width*12; }
+    .fp-allocation-size-13 { width: @fp-allocation-unit-width*13; }
+    .fp-allocation-size-14 { width: @fp-allocation-unit-width*14; }
+    .fp-allocation-size-15 { width: @fp-allocation-unit-width*15; }
+    .fp-allocation-size-16 { width: @fp-allocation-unit-width*16; }
+    .fp-allocation-size-17 { width: @fp-allocation-unit-width*17; }
+    .fp-allocation-size-18 { width: @fp-allocation-unit-width*18; }
+    .fp-allocation-size-19 { width: @fp-allocation-unit-width*19; }
+    .fp-allocation-size-20 { width: @fp-allocation-unit-width*20; }
+    .fp-allocation-size-21 { width: @fp-allocation-unit-width*21; }
+    .fp-allocation-size-22 { width: @fp-allocation-unit-width*22; }
+    .fp-allocation-size-23 { width: @fp-allocation-unit-width*23; }
+    .fp-allocation-size-24 { width: @fp-allocation-unit-width*24; }
+    .fp-allocation-size-25 { width: @fp-allocation-unit-width*25; }
+    .fp-allocation-size-26 { width: @fp-allocation-unit-width*26; }
+    .fp-allocation-size-27 { width: @fp-allocation-unit-width*27; }
+    .fp-allocation-size-28 { width: 100%; }
+    */
+    .fp-allocation-slice {
+      border: 1px dashed #ddd;
+      font-size: 10px;
+      clear: both;
+      padding: 0.25em;
+      white-space: nowrap;
+      cursor: default;
+      color: @NetApp-Dark-Gray;
+      height: 21px;
+      margin: 1px;
+      &.fp-allocation-unsliced {
+        height: 87px !important;
+      }
+      &.fp-allocation-slice-unclaimed {
+        cursor: pointer;
+        background-color: #f3f3f3;
+      }
+      &.fp-allocation-slice-claimed-manual {
+        background-color: #ddd;
+        cursor: move;
+      }
+      &.fp-allocation-slice-claimed-auto {
+        background-color: #ddd;
+        text-shadow: 0px 0px 1px #fff;
+        font-style: italic;
+        cursor: move;
+      }
+      &.fp-allocation-slice-claimed-current {
+        background-color: @NetApp-Light-Blue;
+        border-color: @NetApp-Light-Blue;
+        color: @NetApp-White;
+        cursor: pointer;
+      }
+      .inner {
+        padding-left: @fp-allocation-unit-width;
+      }
+    }
+  }
+  .fp-allocation-options {
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    .no-pad-right {
+      padding-left: 0.5em;
+    }
+    .no-pad-left {
+      padding-right: 0.5em;
+    }
+    .fp-allocation-option {
+      padding: 0.25em 0;
+      .option-title {
+        width: 60px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.fp-drive-choice {
+  min-width: 220px;
+  margin: 10px;
+  border: 1px solid @NetApp-Light-Gray;
+  border-radius: @border-radius-base;
+  clear: both;
+}
+
+@fp-foot-hang: 1em;
+
+.fp-foot {
+  margin-left: @fp-foot-hang;
+}
+
+.fp-foot-hang-left {
+  margin-left: -@fp-foot-hang;
+  width: -@fp-foot-hang;
+  float: left;
+}
+
+.headroom {
+  color: @NetApp-Dark-Gray;
+  background-color: @NetApp-White;
+  padding: 0.2em 1em;
+  font-size: 8pt;
+  .fa {
+    color: @NetApp-Orange;
+  }
+}
+
+.drive-speed-7p2 {
+  color: inherit;
+}
+
+.drive-speed-10 {
+  color: @NetApp-Blue;
+}
+
+.drive-speed-15 {
+  color: @NetApp-Green;
+}
+
+.drive-speed-50 {
+  color: @NetApp-Purple;
+}
