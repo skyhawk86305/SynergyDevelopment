@@ -1,7 +1,7 @@
 # dev (cached): docker build --rm=false -t=sr .
 # prod (uncached): docker build --no-cache=true -t=sr .
 FROM ubuntu:trusty
-MAINTAINER Garth Kidd <garth@netapp.com>
+MAINTAINER Greg White <gwhite86305@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SOURCES /etc/apt/sources.list
